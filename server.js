@@ -7,9 +7,17 @@ function listen() {
   console.log('Example app listening at http://' + host + ':' + port);
 }
 app.use(express.static('public'));*/
-var http = require('http');
+const http = require('http');
 
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.end('Hello World!');
-}).listen(process.env.PORT || 3000);
+const hostname = '192.168.1.2';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello, World!\n');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
