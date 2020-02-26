@@ -1,10 +1,6 @@
-const http = require('http');
-
-const hostname = process.env.port;
-const port = 3000;
-
-const server = http.createServer((req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
-});
-
-server.listen(process.env.PORT);
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.write('Hello World!');
+  res.end();
+}).listen(8080);
