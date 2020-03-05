@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $newfp = fopen('posts.json', 'w');
             fwrite($newfp, $json);
             fclose($newfp);
-            header("Location: http://107.15.138.161/");
+            header("Location: http://107.15.138.161:8021/");
         }
     }
     if (isset($_POST['like'])) {
@@ -33,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $newfp = fopen('posts.json', 'w');
             fwrite($newfp, $json);
             fclose($newfp);
-            header("Location: http://107.15.138.161/");
+            header("Location: http://107.15.138.161:8021/");
         }
         else {
             fclose($fp);
@@ -51,7 +51,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $newfp = fopen('posts.json', 'w');
         fwrite($newfp, $json);
         fclose($newfp);
-        header("Location: http://107.15.138.161/");
+        header("Location: http://107.15.138.161:8021/");
     }
 }
 ?>
@@ -87,7 +87,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $arr = json_decode(fread($fp, filesize("users.json")), TRUE);
                     fclose($fp);
                     for ($j = 0; $j < count($arr); $j++) {
-                        echo '<p><a href="' . 'http://107.15.138.161/profile.php/?profile=' . $arr[$j]['username'] . '">' . $arr[$j]['username'] . '</a></p>';
+                        echo '<p><a href="' . 'http://107.15.138.161:8021/profile.php/?profile=' . $arr[$j]['username'] . '">' . $arr[$j]['username'] . '</a></p>';
                     }
                 ?>
             </div>
