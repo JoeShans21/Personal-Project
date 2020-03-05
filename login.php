@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         $_SESSION['last']=$arr[$a]['last'];
                         $_SESSION['id']=$arr[$a]['id'];
                         $_SESSION['date']=$arr[$a]['date'];
-                        header("Location: http://localhost/social-media");
+                        header("Location: http://joeshanahan.com/");
                     }
                 }
             }

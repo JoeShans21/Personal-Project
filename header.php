@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if (!isset($_SESSION['user']))
-        header("Location: http://localhost/social-media/login.php");
+        header("Location: http://joeshanahan.com/login.php");
     $search_err = "";
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         if (isset($_POST['search'])) {
@@ -15,7 +15,7 @@
                 }
             }
             if ($userExists){
-                header("Location: http://localhost/social-media/profile.php/?profile=" . trim($_POST["search"]));
+                header("Location: http://joeshanahan.com/profile.php/?profile=" . trim($_POST["search"]));
             } else {
                 $search_err = "User does not exist.";
             }
@@ -25,7 +25,7 @@
         $imgTypes = ['.jpg', '.JPG', '.jpeg', '.JPEG', '.png', '.PNG', '.gif', '.GIF'];
         for ($a = 0; $a < count($imgTypes); $a++) {
             if (file_exists('pfps/' . $user . $imgTypes[$a]))
-                return 'http://localhost/social-media/pfps/' . $user . $imgTypes[$a];
+                return 'http://joeshanahan.com/pfps/' . $user . $imgTypes[$a];
         }
     }
 ?>
@@ -44,7 +44,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 <div class="w3-top">
     <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
         <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-        <a href="http://localhost/social-media/" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
+        <a href="http://joeshanahan.com/" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
         <div class="w3-dropdown-hover w3-hide-small">
@@ -60,7 +60,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
             <button href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Search"><i class="fa fa-search"></i></button>
             <span class="help-block"><?php echo $search_err; ?></span>
         </form>
-        <a href="<?php echo 'http://localhost/social-media/profile.php/?profile=' . $_SESSION['user'];?>" class="w3-round sw3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
+        <a href="<?php echo 'http://joeshanahan.com/profile.php/?profile=' . $_SESSION['user'];?>" class="w3-round sw3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
             <img src="<?php echo findImg($_SESSION['user']); ?>" class="w3-circle" style="width:35px" alt="Avatar">
         </a>
     </div>
