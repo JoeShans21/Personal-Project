@@ -38,7 +38,7 @@
 		// if everything is ok, try to upload file
 		} else {
     		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        		header("Location: http://localhost/social-media/profile.php/?profile=" . $profile);
+        		header("Location: http://107.15.138.161/profile.php/?profile=" . $profile);
     		} else {
         		echo "Sorry, there was an error uploading your file.";
     		}
