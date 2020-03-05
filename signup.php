@@ -48,10 +48,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         fwrite($newfp, $json);
         fclose($newfp);
         $_SESSION['user']=$username;
-        $_SESSION['first']=$arr[$a]['first'];
-        $_SESSION['last']=$arr[$a]['last'];
-        $_SESSION['id']=$arr[$a]['id'];
-        $_SESSION['date']=$arr[$a]['date'];
+        $_SESSION['first']=$first;
+        $_SESSION['last']=$last;
+        $_SESSION['id']=$count($arr);
+        $_SESSION['date']=array(date('Y'), date('m'), date('d'), date('H'), date('i'));
         header("Location: http://107.15.138.161:8021/");
     }
     
